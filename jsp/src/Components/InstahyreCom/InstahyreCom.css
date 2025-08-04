@@ -94,3 +94,235 @@
   color: #777;
   cursor: not-allowed;
 }
+
+/*css for the second page step 2/4*/
+.second-section {
+  text-align: center;
+}
+
+
+/* css for working locations */
+
+.open-working {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+.open-working h5 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.selected-working-locations {
+  margin-bottom: 10px;
+}
+
+.selected-input {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  background-color: #fafafa;
+  border-radius: 4px;
+  min-height: 40px;
+}
+
+.tag {
+  background-color: #e0f7fa;
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 16px;
+  margin-left: 6px;
+  cursor: pointer;
+}
+
+.remove-btn:hover {
+  color: red;
+}
+
+select {
+  padding: 8px;
+  font-size: 14px;
+  width: 250px;
+}
+
+/* css for joining company */
+.join-company {
+  font-family: Arial, sans-serif;
+  margin: 20px 0;
+}
+
+.join-company h5 {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.join-company select {
+  padding: 8px 12px;
+  font-size: 14px;
+  width: 250px;
+}
+
+/* css for the Step 3/4: */
+.third-section {
+  text-align: center;
+}
+.internships-container {
+  font-family: Arial, sans-serif;
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 10px;
+}
+
+.input-chip-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  border: 1px solid #ccc;
+  padding: 6px;
+  border-radius: 6px;
+}
+
+.input-chip-container input {
+  flex: 1;
+  border: none;
+  outline: none;
+  min-width: 150px;
+  padding: 6px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  background-color: #e0e0e0;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 14px;
+}
+
+.chip .close {
+  margin-left: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #555;
+}
+
+/* qualification css */
+select, input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #00796b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+label {
+  margin-top: 20px;
+  display: block;
+}
+
+/* css for resume */
+.upload-resume input[type="file"] {
+  margin-top: 10px;
+  padding: 5px;
+}
+
+.upload-resume p {
+  font-size: 14px;
+}
+
+
+/* css for the Step 4/4: */
+.fourth-section{
+  text-align: center;
+}
+
+.privacy-setting {
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.privacy-setting label {
+  display: block;
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.block-companies {
+  font-family: 'Segoe UI', sans-serif;
+  margin-top: 20px;
+}
+
+.block-companies h4 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+/* FLEX BOX TO WRAP TAGS + INPUT INSIDE SAME BOX */
+.input-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px;
+  min-height: 45px;
+  background-color: #fff;
+}
+
+.input-container input {
+  flex: 1;
+  min-width: 150px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  padding: 4px;
+}
+
+/* TAG STYLING */
+.tag {
+  display: flex;
+  align-items: center;
+  background-color: #e0f2f1;
+  color: #00695c;
+  padding: 5px 8px;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+/* REMOVE (❌) BUTTON */
+.remove-btn {
+  background: none;
+  border: none;
+  color: #00695c;
+  font-size: 14px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.remove-btn:hover {
+  color: #c62828;
+}
+
