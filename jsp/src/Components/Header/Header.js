@@ -14,9 +14,10 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import { useNavigate } from 'react-router-dom';
 
 const drawerWidth = 240;
-const navItems = ['Instahyre.com', 'Activites', 'Oppertunities', 'Inbox', 'Profile', 'Settings', 'SignOut','SignUp', 'Login'];
+const navItems = [{path:'/activites', name: 'Activites'},{path:"/oppertunities", name:'Oppertunities'},{path: "/inbox", name:'Inbox'},{path:"/profile",name: 'Profile'},{path:"/settings", name: 'Settings'},{path:"/signout", name: 'SignOut'},{path: "/signup" , name:'SignUp'},{path: "/login", name:'Login'}];
 
 function Header(props) {
   const { window } = props;
@@ -26,6 +27,12 @@ function Header(props) {
     setMobileOpen((prevState) => !prevState);
   };
 
+  const navigate = useNavigate();
+
+ const navigatePage = (path) => {
+  navigate(path)
+ }
+
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography variant="h6" sx={{ my: 2 }}>
@@ -34,9 +41,9 @@ function Header(props) {
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
+          <ListItem onClick={() => navigatePage(item.path)} key={item} disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
+              <ListItemText primary={item.name} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -61,16 +68,17 @@ function Header(props) {
             <MenuIcon />
           </IconButton>
           <Typography
+            onClick={() => navigatePage('/')}
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } , cursor: "pointer"}}
           >
-            MUI
+           Instahyre.com
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff' }}>
-                {item}
+              <Button onClick={() => navigatePage(item.path)} key={item} sx={{ color: '#fff' }}>
+                {item.name}
               </Button>
             ))}
           </Box>
