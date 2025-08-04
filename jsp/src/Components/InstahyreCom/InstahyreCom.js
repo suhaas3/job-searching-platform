@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './InstahyreCom.css';
+import Footer from '../../ReusableComponents/Footer/Footer';
 
 export default function InstahyreCom() {
 
@@ -194,7 +195,7 @@ export default function InstahyreCom() {
 
 
 
-
+<Footer/>
 
     </div>
   )
