@@ -16,15 +16,17 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
 import LoginPopup from '../../ReusableComponents/LoginPopup/LoginPopup';
+import SignUpPopup from '../../ReusableComponents/SignUpPopup/SignUpPopup';
 
 const drawerWidth = 240;
-const navItems = [{path:'/activites', name: 'Activites'},{path:"/oppertunities", name:'Oppertunities'},{path: "/inbox", name:'Inbox'},{path:"/profile",name: 'Profile'},{path:"/settings", name: 'Settings'},{path:"/signout", name: 'SignOut'},{path: "/signup" , name:'SignUp'},{path: "/login", name:'Login'}];
+const navItems = [{path:'/activites', name: 'Activites'},{path:"/oppertunities", name:'Oppertunities'},{path: "/inbox", name:'Inbox'},{path:"/profile",name: 'Profile'},{path:"/settings", name: 'Settings'},{path:"/signout", name: 'SignOut'},{path: "/signup" , name:'SignUp'},{path: "", name:'Login'}];
 
 function Header(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const [loginOpen,setLoginOpen]=React.useState(false);
+  const [signupOpen,setSignupOpen]=React.useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -32,10 +34,10 @@ function Header(props) {
 
   const navigate = useNavigate();
 
- const navigatePage = (path,item) => {
-  if (item.name === 'Login') {
+ const navigatePage = (path,item = null) => {
+  if (item && item.name === 'Login') {
     setLoginOpen(prev => !prev);
-  }
+  } 
   navigate(path)
  }
 
@@ -114,7 +116,9 @@ function Header(props) {
       </Box>
     </Box>
 
-    {loginOpen && <LoginPopup loginOpen={loginOpen} setLoginOpen={setLoginOpen}/>} 
+    {loginOpen && <LoginPopup loginOpen={loginOpen} setLoginOpen={setLoginOpen}/>}
+
+    {signupOpen && <SignUpPopup signupOpen={signupOpen} setSignupOpen={setSignupOpen}/>} 
     </>
   );
 }

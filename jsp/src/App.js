@@ -8,7 +8,6 @@ import Inbox from "./Components/Inbox/Inbox";
 import Profile from "./Components/Profile/Profile";
 import Settings from "./Components/Settings/Settings";
 import SignOut from "./Components/SignOut/SignOut";
-import Login from "./Components/Login/Login";
 import SignIn from "./Components/SignUp/SignUp";
 
 
@@ -28,7 +27,6 @@ function App() {
         <Route path="/profile" element={<Profile/>} />
          <Route path="/signout" element={<SignOut/>} />
          <Route path="/signup" element={<SignIn/>} />
-         <Route path="/login" element={<Login/>}/>
       </Routes>
     </BrowserRouter>
     </>
