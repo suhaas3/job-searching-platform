@@ -1,38 +1,123 @@
-.fisrt-section {
+/* Main Container */
+.instahyre-first-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 30px 40px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Header Section */
+.first-section {
   text-align: center;
+  padding-bottom: 20px;
+}
+.first-section h3 {
+  font-size: 24px;
+  color: #222;
+}
+.first-section p {
+
+  font-size: 16px;
+  color: #666;
 }
 
-/*selected skills css*/
+/* Horizontal Divider */
+.instahyre-first-container hr {
+  margin: 20px 0;
+  border: none;
+  border-top: 1px solid #eee;
+}
+
+/* Checkbox/Radio Section */
+.checkbox-container {
+  margin: 30px 0;
+}
+.checkbox-group {
+  margin-bottom: 25px;
+}
+.checkbox-group p {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.radio-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+  color: #444;
+  cursor: pointer;
+}
+.radio-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px; /* reduce from 12px to 8px or lower */
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 4px; /* reduce inner spacing between radio and label */
+  font-size: 15px;
+  color: #444;
+  cursor: pointer;
+}
+
+/* Styled Radio Input */
+.radio-label input[type="radio"] {
+  accent-color: #007bff;
+}
+
+/* Preferred Role */
+.preferred-role {
+  margin-bottom: 30px;
+}
+.preferred-role p {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.preferred-role select {
+  width: 100%;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* Skills Container */
 .skills-selected-container {
-  max-width: 600px;
-  margin: 30px auto;
+  margin-top: 20px;
+  background-color: #f7f9fc;
+  border: 1px solid #ddd;
   padding: 20px;
-  border: 2px solid #ddd;
-  border-radius: 10px;
-  background-color: #f9f9f9;
-  font-family: Arial, sans-serif;
+  border-radius: 12px;
 }
-
 .skills-selected-container h3 {
   margin-bottom: 10px;
-  color: #333;
+  color: #222;
 }
-
 .skills-selected-container p {
-  font-weight: bold;
   margin: 10px 0 5px;
+  font-weight: 500;
+  color: #555;
 }
-
 .skills-selected-container input[type="text"] {
-  padding: 8px 12px;
+  padding: 10px;
   font-size: 14px;
   width: 60%;
+  max-width: 300px;
   margin-top: 10px;
   margin-right: 10px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 6px;
 }
-
 .skills-selected-container button {
   padding: 8px 14px;
   font-size: 14px;
@@ -40,99 +125,169 @@
   color: white;
   border: none;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
 }
-
 .skills-selected-container button:hover {
   background-color: #0056b3;
 }
-
-.skills-selected-container .selected-skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 15px;
-}
-
 .skills-selected-container span {
   display: inline-block;
   background-color: #e0f7fa;
   color: #00796b;
-  padding: 5px 10px;
+  padding: 6px 12px;
   border-radius: 16px;
   font-size: 14px;
-  margin-right: 10px;
+  margin: 5px 5px 10px 0;
 }
-
 .skills-selected-container span button {
   background: none;
   border: none;
   color: #e53935;
-  margin-left: 8px;
-  font-size: 16px;
+  margin-left: 6px;
+  font-size: 14px;
   cursor: pointer;
 }
 
-.skills-selected-container .suggested-skills {
-  margin-top: 10px;
+/* Suggested Skills */
+.suggested-skills {
+  margin-top: 15px;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
 }
-
-.skills-selected-container .suggested-skills button {
+.suggested-skills button {
   background-color: #f0f0f0;
   color: #333;
   border: 1px solid #888;
   padding: 6px 12px;
   border-radius: 16px;
   cursor: pointer;
+  transition: background-color 0.2s ease;
 }
-
-.skills-selected-container .suggested-skills button:disabled {
+.suggested-skills button:hover {
+  background-color: #e0e0e0;
+}
+.suggested-skills button:disabled {
   background-color: #ccc;
   color: #777;
   cursor: not-allowed;
 }
 
-/*css for the second page step 2/4*/
-.second-section {
-  text-align: center;
+/* 📱 Mobile Responsive */
+@media (max-width: 768px) {
+  .instahyre-first-container {
+    padding: 20px 15px;
+  }
+
+  .first-section h3 {
+    font-size: 20px;
+  }
+
+  .first-section p {
+    font-size: 14px;
+  }
+
+  .radio-options {
+    flex-direction: column;
+  }
+
+  .skills-selected-container input[type="text"] {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .skills-selected-container button {
+    width: 100%;
+    margin-top: 5px;
+  }
+
+  .preferred-role select {
+    font-size: 14px;
+  }
 }
 
 
-/* css for working locations */
+/*css for the second page step 2/4*/
+/* 🌐 Base container for Step 2 */
+.instahyre-second-container {
+  background-color: #f4f5f7; /* Light gray formal background */
+  padding: 30px 20px;
+  border-radius: 12px;
+  max-width: 800px;
+  margin: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
+/* 🧾 Header text */
+.second-section {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.second-section h4 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #222;
+}
+
+.second-section p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* 🌍 Current location select */
+.currently-located {
+  margin-bottom: 30px;
+}
+
+.currently-located p {
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.currently-located select {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+
+/* 🧭 Open to working section */
 .open-working {
-  font-family: Arial, sans-serif;
-  margin: 20px;
+  margin-bottom: 30px;
 }
 
 .open-working h5 {
   font-size: 16px;
+  font-weight: 500;
   margin-bottom: 10px;
 }
 
 .selected-working-locations {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .selected-input {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  padding: 8px;
+  padding: 10px;
   border: 1px solid #ccc;
-  background-color: #fafafa;
-  border-radius: 4px;
-  min-height: 40px;
+  background-color: #ffffff;
+  border-radius: 6px;
+  min-height: 45px;
 }
 
 .tag {
-  background-color: #e0f7fa;
-  padding: 5px 10px;
-  border-radius: 12px;
-  font-size: 14px;
+  background-color: #e6f0ff;
+  color: #003366;
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 13px;
   display: flex;
   align-items: center;
 }
@@ -150,63 +305,115 @@
   color: red;
 }
 
-select {
-  padding: 8px;
-  font-size: 14px;
-  width: 250px;
-}
-
-/* css for joining company */
+/* ⏰ Join company section */
 .join-company {
-  font-family: Arial, sans-serif;
-  margin: 20px 0;
+  margin-bottom: 20px;
 }
 
 .join-company h5 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.join-company select {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .instahyre-second-container {
+    padding: 20px 15px;
+  }
+
+  .selected-input {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .tag {
+    font-size: 12px;
+  }
+
+  select {
+    width: 100% !important;
+  }
+}
+
+
+/* css for the step 3/4 */
+
+/* ---------- Container Styling ---------- */
+.instahyre-third-container {
+  background-color: #f9f9fb;
+  padding: 30px 20px;
+  max-width: 900px;
+  margin: auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  border-radius: 8px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* ---------- Section Headers ---------- */
+.third-section {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.third-section h4 {
+  font-size: 20px;
+  color: #2d3e50;
+}
+
+.third-section p {
+  font-size: 14px;
+  color: #6f7c8a;
+}
+
+/* ---------- Internships Section ---------- */
+.internships-container {
+  margin-bottom: 30px;
+}
+
+.internships-container h4 {
   margin-bottom: 10px;
   font-size: 16px;
 }
 
-.join-company select {
-  padding: 8px 12px;
-  font-size: 14px;
-  width: 250px;
-}
-
-/* css for the Step 3/4: */
-.third-section {
-  text-align: center;
-}
-.internships-container {
-  font-family: Arial, sans-serif;
-  max-width: 500px;
-  margin: 20px auto;
-  padding: 10px;
-}
-
+/* ---------- Chips Input ---------- */
 .input-chip-container {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 8px;
-  border: 1px solid #ccc;
-  padding: 6px;
+  border: 1px solid #cbd5e0;
+  padding: 10px;
   border-radius: 6px;
+  background-color: white;
 }
 
 .input-chip-container input {
   flex: 1;
+  min-width: 150px;
   border: none;
   outline: none;
-  min-width: 150px;
   padding: 6px;
+  font-size: 14px;
 }
 
 .chip {
   display: inline-flex;
   align-items: center;
-  background-color: #e0e0e0;
-  padding: 5px 10px;
-  border-radius: 15px;
+  background-color: #e2e8f0;
+  color: #2d3748;
+  padding: 6px 12px;
+  border-radius: 20px;
   font-size: 14px;
 }
 
@@ -214,115 +421,348 @@ select {
   margin-left: 8px;
   cursor: pointer;
   font-weight: bold;
-  color: #555;
+  color: #4a5568;
 }
 
-/* qualification css */
-select, input {
+/* ---------- Qualifications Section ---------- */
+.qualification {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.qualification select,
+.qualification input {
   width: 100%;
-  padding: 8px;
+  padding: 10px;
   margin-top: 10px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
+  border-radius: 6px;
+  border: 1px solid #cbd5e0;
+  font-size: 14px;
 }
 
-button {
-  margin-top: 10px;
-  padding: 8px 16px;
-  background-color: #00796b;
-  color: white;
+.qualification button {
+  background-color: #1a73e8;
   border: none;
+  color: white;
+  padding: 10px 18px;
   border-radius: 4px;
   cursor: pointer;
+  font-weight: 500;
 }
 
-label {
-  margin-top: 20px;
-  display: block;
+.qualification button:hover {
+  background-color: #155ab6;
 }
 
-/* css for resume */
-.upload-resume input[type="file"] {
-  margin-top: 10px;
-  padding: 5px;
+/* ---------- Resume Upload Section ---------- */
+.upload-resume {
+  margin-top: 30px;
+  background-color: #ffffff;
+  padding: 20px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.upload-resume h4 {
+  margin-bottom: 10px;
+  font-size: 16px;
 }
 
 .upload-resume p {
   font-size: 14px;
+  color: #555;
 }
+
+.upload-resume input[type="file"] {
+  padding: 6px;
+  font-size: 14px;
+  margin-top: 10px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.upload-resume strong {
+  color: #00796b;
+}
+
+/* ---------- Responsive Styling ---------- */
+@media screen and (max-width: 768px) {
+  .instahyre-third-container {
+    padding: 20px 15px;
+  }
+
+  .input-chip-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .qualification select,
+  .qualification input,
+  .upload-resume input[type="file"] {
+    font-size: 13px;
+  }
+
+  .third-section h4 {
+    font-size: 18px;
+  }
+
+  .chip {
+    font-size: 13px;
+  }
+}
+
 
 
 /* css for the Step 4/4: */
-.fourth-section{
-  text-align: center;
-}
-
-.privacy-setting {
-  padding: 20px;
-  font-family: 'Arial', sans-serif;
-}
-
-.privacy-setting label {
-  display: block;
-  margin: 10px 0;
-  font-size: 14px;
-}
-
-.block-companies {
+/* Fourth Page Container */
+.instahyre-fourth-page {
+  background-color: #f4f6f8;
+  padding: 40px 20px;
   font-family: 'Segoe UI', sans-serif;
-  margin-top: 20px;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* use center for full vertical center */
 }
 
-.block-companies h4 {
+/* Centered content wrapper */
+.form-wrapper {
+  width: 100%;
+  max-width: 600px;
+  background-color: #fff;
+  padding: 32px;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+
+/* Step Title */
+.fourth-section {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.fourth-section h4 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+.fourth-section p {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Divider */
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 16px 0;
+}
+
+/* --- PRIVACY SECTION --- */
+.privacy-setting {
+  margin-bottom: 25px;
+}
+
+.privacy-setting h4 {
   margin-bottom: 10px;
   font-size: 16px;
   color: #333;
 }
 
-/* FLEX BOX TO WRAP TAGS + INPUT INSIDE SAME BOX */
+.privacy-setting label {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #444;
+  gap: 8px;
+}
+
+/* --- BLOCK COMPANIES --- */
+.block-companies {
+  margin-bottom: 25px;
+}
+
+.block-companies h4 {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+/* Tags + input in one line */
 .input-container {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 8px;
+  padding: 10px;
+  background-color: white;
   border: 1px solid #ccc;
   border-radius: 6px;
-  padding: 8px;
-  min-height: 45px;
-  background-color: #fff;
+  min-height: 48px;
 }
 
 .input-container input {
   flex: 1;
-  min-width: 150px;
+  min-width: 140px;
   border: none;
   outline: none;
   font-size: 14px;
-  padding: 4px;
+  padding: 5px;
 }
 
-/* TAG STYLING */
+/* Tags for blocked companies */
 .tag {
   display: flex;
   align-items: center;
-  background-color: #e0f2f1;
-  color: #00695c;
-  padding: 5px 8px;
-  border-radius: 4px;
+  background-color: #e3f2fd;
+  color: #1565c0;
+  padding: 5px 10px;
+  border-radius: 16px;
   font-size: 13px;
 }
 
-/* REMOVE (❌) BUTTON */
 .remove-btn {
   background: none;
   border: none;
-  color: #00695c;
+  margin-left: 6px;
   font-size: 14px;
-  margin-left: 5px;
+  color: #1565c0;
   cursor: pointer;
 }
 
 .remove-btn:hover {
-  color: #c62828;
+  color: #b71c1c;
 }
+
+/* --- WHATSAPP SECTION --- */
+.container {
+  max-width: 500px;
+  margin: auto;
+  margin-bottom: 25px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.WhatsApp {
+  margin-bottom: 12px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+}
+
+.checkbox-label h4 {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* WhatsApp input */
+.mobile-input-wrapper {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.country-code-select,
+.mobile-input {
+  padding: 10px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  flex: 1;
+  min-width: 120px;
+}
+
+/* --- GENDER SECTION --- */
+.male-female h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.gender-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #444;
+}
+
+/* --- OUTPUT TEXT (Optional) --- */
+.output {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 15px;
+  color: #333;
+}
+
+/* --- RESPONSIVENESS --- */
+@media (max-width: 600px) {
+  .input-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .mobile-input-wrapper {
+    flex-direction: column;
+  }
+
+  .country-code-select,
+  .mobile-input {
+    width: 100%;
+  }
+
+  .container {
+    padding: 16px;
+  }
+
+  .checkbox-label {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .gender-option {
+    font-size: 15px;
+  }
+}
+
+
+/* css for nav-buttons */
+.nav-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin: 5px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.nav-button:hover {
+  background-color: #0056b3;
+}
+
+.gethyred-button {
+  background-color: #28a745;
+}
+
+.gethyred-button:hover {
+  background-color: #1e7e34;
+}
+
 
