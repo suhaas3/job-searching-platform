@@ -15,6 +15,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
+import LoginPopup from '../../ReusableComponents/LoginPopup/LoginPopup';
 
 const drawerWidth = 240;
 const navItems = [{path:'/activites', name: 'Activites'},{path:"/oppertunities", name:'Oppertunities'},{path: "/inbox", name:'Inbox'},{path:"/profile",name: 'Profile'},{path:"/settings", name: 'Settings'},{path:"/signout", name: 'SignOut'},{path: "/signup" , name:'SignUp'},{path: "/login", name:'Login'}];
@@ -23,15 +24,21 @@ function Header(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
+  const [loginOpen,setLoginOpen]=React.useState(false);
+
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
 
   const navigate = useNavigate();
 
- const navigatePage = (path) => {
+ const navigatePage = (path,item) => {
+  if (item.name === 'Login') {
+    setLoginOpen(prev => !prev);
+  }
   navigate(path)
  }
+
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
@@ -54,6 +61,7 @@ function Header(props) {
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
+    <>
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar component="nav">
@@ -77,7 +85,7 @@ function Header(props) {
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-              <Button onClick={() => navigatePage(item.path)} key={item} sx={{ color: '#fff' }}>
+              <Button data-id={item} onClick={() => navigatePage(item.path,item)} key={item} sx={{ color: '#fff' }}>
                 {item.name}
               </Button>
             ))}
@@ -105,6 +113,9 @@ function Header(props) {
         <Toolbar />
       </Box>
     </Box>
+
+    {loginOpen && <LoginPopup loginOpen={loginOpen} setLoginOpen={setLoginOpen}/>} 
+    </>
   );
 }
 
