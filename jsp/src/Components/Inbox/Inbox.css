@@ -1,0 +1,207 @@
+.inbox-header {
+  background-color: rgb(234, 227, 227);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.conversations {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 16px;
+  max-width: 350px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  font-family: Arial, sans-serif;
+}
+
+.conversation-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.conversation-select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: #fff;
+  color: #333;
+  outline: none;
+  cursor: pointer;
+}
+
+.conversation-select:focus {
+  border-color: #00c4a7;
+  box-shadow: 0 0 0 2px rgba(0, 196, 167, 0.2);
+}
+
+.conversation-select option {
+  padding: 8px;
+}
+
+
+.conversation-filter {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-family: Arial, sans-serif;
+  width: 350px;
+}
+
+.filter-option {
+  display: flex;
+  align-items: center;
+  margin-right: 16px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+}
+
+.filter-option input[type="radio"] {
+  accent-color: #00bcd4; /* Blue highlight like Instahyre */
+  margin-right: 6px;
+  cursor: pointer;
+}
+
+.filter-icon {
+  margin-left: auto;
+  border-left: 1px solid #e0e0e0;
+  padding-left: 12px;
+  color: #888;
+  font-size: 14px;
+}
+
+.conversation-search-container {
+  background: #fff;
+  padding: 12px;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  width: 350px;
+  height: 500px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 6px 10px;
+  background: #fff;
+}
+
+.search-icon {
+  color: #888;
+  font-size: 16px;
+  margin-right: 6px;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 14px;
+  color: #333;
+}
+
+.no-conversations {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #6b7280;
+  font-style: italic;
+}
+
+
+.no-conversation-container {
+  background: #fff;
+  padding: 60px 20px;
+  border-radius: 6px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  border: 1px solid #e5e7eb;
+  height: 656px;
+}
+
+.inbox-icon {
+  font-size: 60px;
+  color: #d1d5db; /* light gray */
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #374151; /* dark gray */
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #6b7280; /* medium gray */
+}
+
+/* --- Page wrapper --- */
+.inbox-container {
+  background: #f5f7fb;           /* formal background */
+  min-height: 100vh;
+  padding-bottom: 24px;
+}
+
+/* Two-column layout: left + right */
+.inbox-left-right-sections {
+  max-width: 1180px;
+  margin: 16px auto 0;
+  padding: 0 16px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;   /* half & half */
+  gap: 24px;
+  align-items: start;
+  padding-bottom: 40px;
+}
+
+/* Left column stacks its widgets vertically */
+.inbox-left-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+/* Right column can hold the empty state / threads list */
+.inbox-right-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+/* Make left widgets fill the column width */
+.conversations,
+.conversation-filter,
+.conversation-search-container {
+  width: 100%;               /* override fixed width */
+  max-width: 100%;
+}
+
+/* Optional: make the empty state fill the right column nicely */
+.no-conversation-container {
+  width: 100%;
+}
+
+/* --- Responsive: stack on tablet/mobile --- */
+@media (max-width: 992px) {
+  .inbox-left-right-sections {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  /* If you want right first on mobile, keep this order; remove if not needed */
+  .inbox-right-section { order: 1; }
+  .inbox-left-section  { order: 2; }
+}
