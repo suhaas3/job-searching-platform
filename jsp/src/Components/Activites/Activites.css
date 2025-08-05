@@ -1,0 +1,152 @@
+.activites-container {
+  padding-top: 40px;
+}
+
+.filter-activiti {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 16px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  width: 280px;
+}
+
+.filter-activiti .card-title {
+  margin: 0 0 12px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+}
+
+.filter-activiti .option {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #374151;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.got-insta-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 20px;
+  max-width: 280px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  font-family: Arial, sans-serif;
+}
+
+.got-insta-card .card-title {
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.got-insta-card .card-text {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0 0 16px;
+  line-height: 1.4;
+}
+
+.claim-btn {
+  background: #00c4a7;
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.claim-btn:hover {
+  background: #00af95;
+}
+
+.no-activity-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  font-family: Arial, sans-serif;
+  max-width: 100%;
+}
+
+.no-activity-text {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* === Layout: two equal columns on desktop === */
+.activites-sections {
+  max-width: 1180px;
+  margin: 24px auto;
+  padding: 0 16px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* half + half */
+  gap: 24px;
+  align-items: start;
+}
+
+/* Left: vertical list */
+.activites-left-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  /* one card per row */
+  gap: 16px;
+}
+
+/* Right: your content area */
+.activites-right-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+/* Equal size for every left card */
+.act-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 200px;
+  /* <- set the exact equal height you want */
+  overflow: hidden;
+  /* prevents spillover if text is long */
+}
+
+/* Optional: page background for a formal look */
+.activites-container {
+  background: #f5f7fb;
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+}
+
+/* ----- Responsive: stack on small screens ----- */
+@media (max-width: 992px) {
+  .activites-sections {
+    grid-template-columns: 1fr;
+    /* stack */
+    gap: 16px;
+  }
+
+  /* If you want right first on mobile, keep these orders */
+  .activites-right-section {
+    order: 1;
+  }
+
+  .activites-left-section {
+    order: 2;
+  }
+
+  /* Let cards expand naturally on small screens for readability */
+  .act-card {
+    height: auto;
+  }
+}
