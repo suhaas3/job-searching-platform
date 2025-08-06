@@ -30,6 +30,17 @@ export default function InstahyreCom() {
     }
   ];
 
+  const [values, setValues] = useState({ status: "", jobType: "" });
+  const [touched, setTouched] = useState({ status: false, jobType: false });
+
+  const handleChange = (name, value) => {
+    setValues(prev => ({ ...prev, [name]: value }));
+    setTouched(prev => ({ ...prev, [name]: true }));
+  };
+
+  const isValid = values.status && values.jobType;
+
+
   const jobCategories = [
     {
       label: "Software Development",
@@ -74,6 +85,13 @@ export default function InstahyreCom() {
       ]
     }
   ];
+
+  const [selectedRole, setSelectedRole] = useState(""); // state to track selection
+
+  const handleYourRole = (e) => {
+    setSelectedRole(e.target.value);
+    console.log("Selected Role:", e.target.value); // ✅ you can send this to backend later
+  };
 
   //Highlight your unique skills to recruiters 
   // Add up to 15 skills to enhance your profile
@@ -188,6 +206,7 @@ export default function InstahyreCom() {
   const [university, setUniversity] = useState('');
   const [qualifications, setQualifications] = useState([]);
 
+
   const handleAdd = () => {
     if (course && specialization && year && university) {
       const newQualification = `${course} - ${specialization} - ${year} - ${university}`;
@@ -214,6 +233,7 @@ export default function InstahyreCom() {
     }
   };
 
+
   //css step 4/4:
   const [privacy, setPrivacy] = useState('allowAll');
 
@@ -228,6 +248,7 @@ export default function InstahyreCom() {
       setCompany('');
     }
   };
+
 
   // 🔁 Renamed from handleRemove to removeBlockedCompany
   const removeBlockedCompany = (index) => {
@@ -270,21 +291,39 @@ export default function InstahyreCom() {
                 <div className="radio-options">
                   {options.map(({ label, value }) => (
                     <label key={value} className="radio-label">
-                      <input type="radio" name={name} value={value} />
+                      <input
+                        type="radio"
+                        name={name}
+                        value={value}
+                        checked={values[name] === value}
+                        onChange={(e) => handleChange(name, e.target.value)}
+                      />
                       {label}
                     </label>
                   ))}
                 </div>
-
+                {touched[name] && !values[name] && (
+                  <small className="error">Please choose one option.</small>
+                )}
               </div>
             ))}
+
+            <button type="button" disabled={!isValid}>
+              Continue
+            </button>
           </div>
 
-          <div className='preferred-role'>
+          <div className="preferred-role">
             <p>Select your preferred role:</p>
             <div>
               <label htmlFor="job-role">Select a Job Role:</label>
-              <select id="job-role" name="job-role">
+              <select
+                id="job-role"
+                name="job-role"
+                value={selectedRole} // controlled input
+                onChange={handleYourRole} // updates state when changed
+              >
+                <option value="">-- Please choose an option --</option>
                 {jobCategories.map((group) => (
                   <optgroup key={group.label} label={group.label}>
                     {group.options.map((option) => (
@@ -296,6 +335,12 @@ export default function InstahyreCom() {
                 ))}
               </select>
             </div>
+
+            {/* {selectedRole && (
+              <p style={{ marginTop: "8px" }}>
+                ✅ You selected: <strong>{selectedRole}</strong>
+              </p>
+            )} */}
           </div>
 
 
